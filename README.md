@@ -6,6 +6,7 @@
 
 - python 获取文件夹内所有文件
 - python DOM操作XML技巧汇总
+- python xlrd,xlwt模块操作excel文件
 
 
 
