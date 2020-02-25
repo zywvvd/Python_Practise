@@ -1,3 +1,12 @@
+'''
+Practice creating and writing XML files
+
+2020.2.25
+by Yiwei Zhang
+
+https://github.com/zywvvd/Python_Practise
+'''
+
 from xml.dom import minidom
 
 #1.创建DOM树对象

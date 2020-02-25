@@ -1,3 +1,11 @@
+'''
+Practice reading and parsing XML files
+
+2020.2.25
+by Yiwei Zhang
+
+https://github.com/zywvvd/Python_Practise
+'''
 
 #加载DOM minidom模块
 from xml.dom.minidom import parse
