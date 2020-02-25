@@ -1,3 +1,12 @@
+'''
+getting file-info of dir practise py file
+
+2020.2.25
+by Yiwei Zhang
+
+https://github.com/zywvvd/Python_Practise
+'''
+
 import glob
 
 file_path='*'
