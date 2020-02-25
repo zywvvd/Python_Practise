@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <book price="399" price2="599">
+        <name>C++ Primer 第1版 (中文版)</name>
+    </book>
+</root>

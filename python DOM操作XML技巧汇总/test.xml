@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--file name "test.xml" 2020.2.24 by VVD-->
+<bookstore type="info science">
+
+	<book category="Coding">
+		<title>C++Primer</title>
+		<author>StanleyB.Lippman</author>
+		<price>60.0</price>
+        <year>2009</year>
+	</book>
+
+	<book category="Computer">
+		<title>编译原理</title>
+		<author>AlfredV.Aho</author>
+		<price>70.0</price>
+        <year>2013</year>
+	</book>
+
+</bookstore>
