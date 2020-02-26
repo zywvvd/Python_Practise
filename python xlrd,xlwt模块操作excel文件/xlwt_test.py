@@ -94,6 +94,18 @@ test_sheet_1.write_merge(3, 5, 3, 5, ' Merge ',style) # ' Merge ' 为写入内�
 
 test_sheet_1.write(0, 0, 1234567.890123,style) # 向[0,0]坐标单元格写入数据，应用style样式
 
+style.num_format_str = '#,##0.000%' # 内容格式
+test_sheet_1.write(6, 0, 67.8123456,style) # 
+
+style.num_format_str = '###%' # 内容格式
+test_sheet_1.write(6, 5, 0.128,style) # 
+
+style.num_format_str = '###.##%' # 内容格式
+test_sheet_1.write(6, 4, 0.128,style) # 
+
+style.num_format_str = '000.00%' # 内容格式
+test_sheet_1.write(6, 3, 0.128,style) # 
+
 try:
     xlsx_writer.save('write_test.xlsx')   # 保存xlsx
     xlsx_writer.save('write_test.xls')   # 保存xls
