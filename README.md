@@ -8,7 +8,7 @@
 - python DOM操作XML技巧汇总
 - python xlrd,xlwt模块操作excel文件
 
-
+- python 获取图片Exif详细信息
 
 
 
