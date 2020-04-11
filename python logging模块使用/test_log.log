@@ -1,0 +1,4 @@
+Sat, 2020-04-11 15:08:38 logging_test.py[line:51] INFO info
+Sat, 2020-04-11 15:08:38 logging_test.py[line:52] WARNING warning
+Sat, 2020-04-11 15:08:38 logging_test.py[line:53] ERROR error
+Sat, 2020-04-11 15:08:38 logging_test.py[line:54] CRITICAL critical
