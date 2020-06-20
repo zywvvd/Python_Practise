@@ -10,6 +10,7 @@
 - python 获取图片Exif详细信息
 - python logging模块使用
 - Keras mean iou 评价函数与测试
+- python 类变量相关内容
 
 
 
