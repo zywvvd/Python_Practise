@@ -18,6 +18,14 @@ if __name__ == '__main__':
     # xy_flip = cv2.flip(image_1, flipCode=-1)
     # PIS([image_1,'origin'], [y_flip, 'flipCode 1 y flip'], [x_flip, 'flipCode 0 x flip'], [xy_flip, 'flipCode -1 xy flip'])
     
+    ## cv2.gemm
+    # mat_1 = np.ones([3,5])
+    # mat_2 = np.ones([3,5])
+    # mat_3 = np.ones([5,5])
+    
+    # res = cv2.gemm(mat_1, mat_2, 2, mat_3, 3, flags=cv2.GEMM_1_T)
+    
+    
     
     res = cv2.compare(vector_1, vector_2, cmpop=cv2.CMP_GE)
 
