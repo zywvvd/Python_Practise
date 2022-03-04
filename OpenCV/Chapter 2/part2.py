@@ -27,6 +27,27 @@ if __name__ == '__main__':
     
     
     
+
+    ## cv2.idct()
+    # image = mt.cv_rgb_imread('img1.jpg')
+    # image = mt.image_resize(image, [300, 300]).astype('float32')
+    # image = mt.to_gray_image(image)
+    
+    # dct_res = cv2.dct(image)
+
+    # res = cv2.idct(dct_res)
+    # PIS(res)
+
+
+    ## cv2.idft()
+    # image = mt.cv_rgb_imread('img1.jpg')
+    # image = mt.image_resize(image, [300, 300]).astype('float32')
+    # image = mt.to_gray_image(image)
+    
+    # dft_res = cv2.dft(image)
+    # res = cv2.idft(dft_res)
+    # PIS(res)
+
     res = cv2.compare(vector_1, vector_2, cmpop=cv2.CMP_GE)
 
     res = cv2.completeSymm(vector_1, lowerToUpper=False)
