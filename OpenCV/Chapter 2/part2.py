@@ -154,18 +154,8 @@ if __name__ == '__main__':
     
     # res = cv2.normalize(vector1, vector2, norm_type = cv2.NORM_MINMAX, alpha=5, beta=2)
     
-
-
-
-    res = cv2.completeSymm(vector_1, lowerToUpper=False)
-
-    image_1 = mt.cv_rgb_imread('img1.jpg')
-    image_2 = mt.cv_rgb_imread('img2.jpg')
-
-    image_1 = mt.image_resize(image_1, [300, 300])
-    image_2 = mt.image_resize(image_2, [300, 300])
-
-    cv2.checkRange(image_1, False, 0, 255)
-
+    # points = np.ones([5, 2])
+    # matrix = np.eye(2)
+    # res = cv2.perspectiveTransform(points, matrix) 
     
     pass
