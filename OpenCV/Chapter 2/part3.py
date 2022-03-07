@@ -69,4 +69,24 @@ if __name__ == '__main__':
     # coeffs = np.array([4, 0, 1], dtype='float32')
     # res = cv2.solvePoly(coeffs)
     
+
+    ## cv2.sort()
+    # data = cv2.randShuffle(np.reshape(np.arange(36), [6,6]))
+    # res = cv2.sort(data, flags=cv2.SORT_EVERY_ROW)
+
+
+    ## cv2.sortIdx()  
+    # data = cv2.randShuffle(np.reshape(np.arange(36), [6,6]))
+    # res = cv2.sortIdx(data,  flags=cv2.SORT_EVERY_ROW)
+
+
+    ## cv2.split()
+    # image = mt.cv_rgb_imread('img1.jpg')
+    # res = cv2.split(image)
+    # PIS(image, *res)
+
+
+    ## cv2.sqrt()
+    # data = cv2.randShuffle(np.reshape(np.arange(16, dtype='float32'), [4, 4]))
+    # res = cv2.sqrt(data) 
     pass
