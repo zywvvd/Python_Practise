@@ -89,4 +89,28 @@ if __name__ == '__main__':
     ## cv2.sqrt()
     # data = cv2.randShuffle(np.reshape(np.arange(16, dtype='float32'), [4, 4]))
     # res = cv2.sqrt(data) 
+    
+    ## cv2.subtract() 
+    # mat_1 = np.ones([3,3])
+    # mat_2 = np.zeros([3,3])
+    # cv2.setIdentity(mat_2)
+    # res = cv2.subtract(mat_1, mat_2) 
+    
+    
+    ## cv2.sum()
+    # mat_1 = np.ones([3,4], dtype='float32')
+    # res = cv2.trace(mat_1)
+    
+    
+    ## cv2.transform()
+    # image = mt.cv_rgb_imread('img1.jpg')
+    # mtx = cv2.flip(cv2.setIdentity(np.zeros([3, 3], dtype='float32')), flipCode=0)
+    # gbr = cv2.transform(image, mtx)
+    # PIS(image, gbr)
+    
+    
+    ## transpose()
+    # mat = np.reshape(np.arange(16, dtype='float32'), [4, 4])
+    # res = cv2.transpose(mat)
+    
     pass
