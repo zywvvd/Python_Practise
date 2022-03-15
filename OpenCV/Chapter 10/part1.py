@@ -84,8 +84,24 @@ if __name__ == '__main__':
     # res = cv2.Sobel(img, -1, 1, 0, ksize=cv2.FILTER_SCHARR)
     # PIS(img, res)
 
-
-    ## 
+    ## cv2.Laplacian()
+    # img = mt.cv_rgb_imread('img1.jpg', gray=False)
+    # res3 = cv2.Laplacian(img, -1, ksize = 3)
+    # res5 = cv2.Laplacian(img, -1, ksize = 5)
+    # res7 = cv2.Laplacian(img, -1, ksize = 7)
+    # PIS(img, res3, res5, res7)
+    
+    ## cv2.erode
+    # img = mt.cv_rgb_imread('img1.jpg', gray=False)
+    # kernal = np.ones([1, 58])
+    # res = cv2.erode(img, kernal)
+    # PIS(img, res)
+    
+    ## cv2.dilate
+    # img = mt.cv_rgb_imread('img1.jpg', gray=False)
+    # kernal = np.ones([1, 58])
+    # res = cv2.dilate(img, kernal)
+    # PIS(img, res)
     
     pass
 
