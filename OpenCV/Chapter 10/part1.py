@@ -103,5 +103,23 @@ if __name__ == '__main__':
     # res = cv2.dilate(img, kernal)
     # PIS(img, res)
     
+    
+    ## cv2.morphologyEx()
+    # img = mt.cv_rgb_imread('test.jpg', gray=True)
+    # kernal_1d = cv2.getGaussianKernel(5, 1)
+    # kernal_2d = kernal_1d* kernal_1d.T
+    # erode = cv2.morphologyEx(img, cv2.MORPH_ERODE, kernal_2d)
+    # dilate = cv2.morphologyEx(img, cv2.MORPH_DILATE, kernal_2d)
+    # open = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernal_2d)
+    # close = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernal_2d)
+    # gradient = cv2.morphologyEx(img, cv2.MORPH_GRADIENT, kernal_2d)
+    # tophat = cv2.morphologyEx(img, cv2.MORPH_TOPHAT, kernal_2d)
+    # blackhat = cv2.morphologyEx(img, cv2.MORPH_BLACKHAT, kernal_2d)
+    # PIS([img, 'origin'], [erode, 'erode'], [dilate, 'dilate'], [open, 'open'], [close, 'close'], [gradient, 'gradient'], [tophat, 'tophat'], [blackhat, 'blackhat'])
+    
+    # binary_array = (np.random.random([20, 20]) > 0.5).astype('uint8')
+    # kernal = np.array([[1, -1, 1], [-1, 1, 1], [1, 1, 0]])
+    # res = cv2.morphologyEx(binary_array, cv2.MORPH_HITMISS, kernal)
+    # PIS(binary_array, res, kernal)
     pass
 
