@@ -121,5 +121,12 @@ if __name__ == '__main__':
     # kernal = np.array([[1, -1, 1], [-1, 1, 1], [1, 1, 0]])
     # res = cv2.morphologyEx(binary_array, cv2.MORPH_HITMISS, kernal)
     # PIS(binary_array, res, kernal)
+    
+    
+    ## cv2.getStructuringElement
+    # cross = cv2.getStructuringElement(cv2.MORPH_CROSS, [5,5])
+    # rect = cv2.getStructuringElement(cv2.MORPH_RECT, [5,5])
+    # ellipse = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, [5,5])
+    # PIS(cross, rect, ellipse)
     pass
 
