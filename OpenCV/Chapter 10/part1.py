@@ -13,9 +13,6 @@ if __name__ == '__main__':
     # res = cv2.copyMakeBorder(res, 180, 180, 180, 180, borderType=cv2.BORDER_REFLECT)
     # PIS(res)
 
-
-
-    
     
     ## cv2.borderInterpolate()
     # cv2.borderInterpolate(10, 1000, cv2.BORDER_REFLECT)
@@ -126,5 +123,32 @@ if __name__ == '__main__':
     # rect = cv2.getStructuringElement(cv2.MORPH_RECT, [5,5])
     # ellipse = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, [5,5])
     # PIS(cross, rect, ellipse)
+
+
+    ## cv2.filter2D()
+    # img = mt.cv_rgb_imread('img1.jpg', gray=False)
+    # kernal = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]])
+    # sob_res = cv2.Sobel(img, -1, 1, 0, ksize=3)
+    # cus_res = cv2.filter2D(img, -1, kernal)
+    # PIS(sob_res, cus_res)
+
+
+    ## cv2.sepFilter2D(
+    # img = mt.cv_rgb_imread('img1.jpg', gray=False)
+    # kernal_x = np.array([[-1, 0, 1]])
+    # kernal_y = np.array([[1], [2], [1]])
+    # sob_res = cv2.Sobel(img, -1, 1, 0, ksize=3)
+    # cus_res = cv2.sepFilter2D(img, -1, kernal_x, kernal_y)
+    # PIS(sob_res, cus_res)
+
+
+    ## cv2.getDerivKernels()
+    # kx, ky = cv2.getDerivKernels(1, 0, cv2.FILTER_SCHARR, normalize=False, ktype=cv2.CV_64F)
+
+
+    ## cv2.getGaussianKernel
+    # g1d = cv2.getGaussianKernel(9, 3)
+    # g2d = np.matmul(g1d, g1d.T)
+    # PIS(g2d)
     pass
 
