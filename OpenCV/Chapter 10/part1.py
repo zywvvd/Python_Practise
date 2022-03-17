@@ -8,16 +8,14 @@ from sqlalchemy import false
 if __name__ == '__main__':
     
     
-    ## cv2.circle()
-    # canvas = np.zeros([400, 400, 3], dtype='uint8')
-    # center = [150, 150]
-    # radius = 50
-    # color = [255, 255, 0]
-    # thickness = 4
-    # lineType = 8
-    # shift = 0
-    # cv2.circle(canvas, center, radius, color, thickness, lineType, shift)
-    # PIS(canvas)
+    ## cv2.copyMakeBorder()
+    # image = mt.cv_rgb_imread('img1.jpg')
+    # res = cv2.copyMakeBorder(image, 1, 1, 1, 1, borderType=cv2.BORDER_CONSTANT, value=(255, 255, 0))
+    # res = cv2.copyMakeBorder(res, 180, 180, 180, 180, borderType=cv2.BORDER_REFLECT)
+    # PIS(res)
+
+
+
     
 
     pass
