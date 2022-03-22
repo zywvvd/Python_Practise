@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import mtutils as mt
 from mtutils import PIS
+from matplotlib import pyplot as plt
 
 
 if __name__ == '__main__':
@@ -138,5 +139,25 @@ if __name__ == '__main__':
     # xmap, ymap = np.meshgrid(x_map, y_map)
     # res = cv2.remap(img, xmap, ymap, cv2.INTER_LINEAR)
     # PIS(res)
+
+
+    ## cv2.inpaint()
+    # img = mt.cv_rgb_imread('img1_inpaint.png')
+    # mask = (img[:,:, 0] > 254).astype('uint8')
+    # res_1 = cv2.inpaint(img, mask, 12, cv2.INPAINT_NS)
+    # res_2 = cv2.inpaint(img, mask, 12, cv2.INPAINT_TELEA)
+    # PIS(img, mask, [res_1, 'cv2.INPAINT_NS'], [res_2, 'cv2.INPAINT_TELEA'])
+
+    # img = mt.cv_rgb_imread('img2_gray.jpg', gray=True)
+    # hist = cv2.calcHist(img, [0], None, [256], [0,255]) 
+    # PIS(img, hist[:, 0])
+
+
+    ## cv2.equalizeHist()
+    # img = mt.cv_rgb_imread('img2_gray.jpg', gray=True)
+    # hist = cv2.calcHist(img, [0], None, [256], [0,255]) 
+    # res = cv2.equalizeHist(img)
+    # res_hist = cv2.calcHist(res, [0], None, [256], [0,255]) 
+    # PIS(img, hist[:, 0], res, res_hist[:, 0], cmap='gray')
     pass
 
