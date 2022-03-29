@@ -98,4 +98,15 @@ if __name__ == '__main__':
     # img_idf_hight = cv2.magnitude(img_idf_hight[:, :, 0], img_idf_hight[:, :, 1])
 
     # PIS([img_idf_low, 'Lowpass'], [img_idf_hight, 'Highpass'])
+
+
+    ## cv2.integral()
+    # map = np.ones([5, 5]) + 1
+    # sum1 = cv2.integral(map)
+    # sum2, sqsum2 = cv2.integral2(map)
+    # sum3, sqsum3, tilted = cv2.integral3(map)
+    # assert (sum1 == sum2).all() and (sum1 == sum3).all()
+    # assert (sqsum2 == sqsum3).all()
+
+
     pass
