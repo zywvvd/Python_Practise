@@ -109,4 +109,44 @@ if __name__ == '__main__':
     # assert (sqsum2 == sqsum3).all()
 
 
+    ## cv2.canny
+    # img = mt.cv_rgb_imread('img1.jpg', gray=True)
+    # res = cv2.Canny(img, 17430, 9000, apertureSize=7, L2gradient=True)
+    # PIS(img, res)
+
+
+    ## cv2.HoughLines
+    # img = mt.cv_rgb_imread('hough_line.jpeg')
+    # ori_img = img.copy()
+    # gray = mt.to_gray_image(img)
+    # edge = cv2.Canny(gray, 17430, 34000, apertureSize=7, L2gradient=True)
+    # lines = cv2.HoughLines(edge, rho=1, theta=np.pi/180, threshold=170)
+
+    # for line in lines:
+    #     rho,theta = line[0]
+    #     a = np.cos(theta)
+    #     b = np.sin(theta)
+    #     x0 = a*rho
+    #     y0 = b*rho
+    #     x1 = int(x0 + 1000*(-b))
+    #     y1 = int(y0 + 1000*(a))
+    #     x2 = int(x0 - 1000*(-b))
+    #     y2 = int(y0 - 1000*(a))
+    
+    #     cv2.line(img,(x1,y1),(x2,y2),(250,250,40),2)
+    # PIS(ori_img, img)
+
+
+    ## cv2.HoughLinesP
+    # img = mt.cv_rgb_imread('hough_line.jpeg')
+    # ori_img = img.copy()
+    # gray = mt.to_gray_image(img)
+    # edge = cv2.Canny(gray, 17430, 34000, apertureSize=7, L2gradient=True)
+    # lines = cv2.HoughLinesP(edge, rho=1, theta=np.pi/180, threshold=30, minLineLength=30, maxLineGap=20)
+    # for line in lines:
+    #     x1,y1,x2,y2 = line[0]
+    #     cv2.line(img,(x1,y1),(x2,y2),(250,255,70),2)
+    # PIS(ori_img, img)
+
+    
     pass
