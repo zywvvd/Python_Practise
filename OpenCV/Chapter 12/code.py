@@ -149,4 +149,119 @@ if __name__ == '__main__':
     # PIS(ori_img, img)
 
     
+    ## cv2.HoughCircles
+    # img_org = mt.cv_rgb_imread('hough_circles.jpeg', gray=False)
+    # img_org = mt.image_resize(img_org, factor=0.4)
+    # img = mt.to_gray_image(img_org)
+
+    # res = cv2.HoughCircles(img, cv2.HOUGH_GRADIENT, 1.2, 100, param1=360, param2=120, minRadius=50, maxRadius=300)
+    # for circle in res[0]:
+    #     x, y, radius = circle
+    #     cv2.circle(img_org, mt.vvd_round([x, y]), mt.vvd_round(radius), color=[255, 0, 0], thickness=2)
+    # PIS(img_org)
+
+
+    ## cv2.HoughCircles
+    # img_org = mt.cv_rgb_im, read('hough_circles.jpeg', gray=False)
+    # img_org = mt.image_resize(img_org, factor=0.4)
+    # img = mt.to_gray_image(img_org)
+
+    # res = cv2.HoughCircles(img, cv2.HOUGH_GRADIENT_ALT, 1.2, 120, param1=500, param2=0.85, minRadius=50, maxRadius=300)
+    # for circle in res:
+    #     x, y, radius = circle[0]
+    #     cv2.circle(img_org, mt.vvd_round([x, y]), mt.vvd_round(radius), color=[255, 0, 0], thickness=2)
+    # PIS(img_org)
+
+
+    ## cv2.distanceTransform()
+    # img_org = mt.cv_rgb_imread('dis_trans.jpg', gray=True)
+    # img = (img_org > 100).astype('uint8')
+    # res = cv2.distanceTransform(img, distanceType=cv2.DIST_L2, maskSize=3)
+    # PIS(img>0, res)
+
+
+    ## cv2.distanceTransformWithLabels()
+    # img_org = mt.cv_rgb_imread('dis_trans.jpg', gray=True)
+    # img = (img_org > 100).astype('uint8')
+    # res_ccomp = cv2.distanceTransformWithLabels(img, distanceType=cv2.DIST_L2, maskSize=0, labelType=cv2.DIST_LABEL_CCOMP)
+    # res_pixel = cv2.distanceTransformWithLabels(img, distanceType=cv2.DIST_L2, maskSize=0, labelType=cv2.DIST_LABEL_PIXEL)
+    # PIS(img_org, res_ccomp[0], res_ccomp[1] % 17, res_pixel[1] % 17)
+
+
+    ## cv2.floodFill()
+    # image = mt.cv_rgb_imread('img1.jpg', gray=True)
+    # mask = cv2.Canny(image, 50, 150)
+    # mask = cv2.copyMakeBorder(mask,1, 1, 1, 1,cv2.BORDER_CONSTANT, value=1)
+
+    # retval, image, mask, rect = cv2.floodFill(image, mask, seedPoint=[500, 650], newVal=255, loDiff=5, upDiff=5)
+    # PIS(image, mask)
+    
+    ## watershed
+    # img = mt.cv_rgb_imread('water.png',)
+    # gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    # ret,thresh=cv2.threshold(gray,0,255,cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+    # kernel=np.ones((3,3),np.uint8)
+    # opening=cv2.morphologyEx(thresh,cv2.MORPH_OPEN,kernel,iterations=2)# 形态开运算
+    # sure_bg=cv2.dilate(opening,kernel,iterations=3)
+
+    # dist_transform=cv2.distanceTransform(opening,cv2.DIST_L2,5)
+    # ret,sure_fg=cv2.threshold(dist_transform,0.7*dist_transform.max(),255,0)
+    # sure_fg=np.uint8(sure_fg)
+    # unknown=cv2.subtract(sure_bg,sure_fg)
+    # ret,connected=cv2.connectedComponents(sure_fg)
+    # markers=connected+1
+    # markers[unknown==255]=0
+    # input_markers = markers.copy()
+    # cv2.watershed(img,markers) 
+
+    # PIS(
+    #     [img, 'raw image'], 
+    #     [thresh, 'threshold'], 
+    #     [sure_bg, 'morphology'], 
+    #     [dist_transform, 'dist_transform'], 
+    #     [sure_fg, 'center'], 
+    #     [unknown, 'target_area'],
+    #     [connected, 'connected'], 
+    #     [input_markers, 'input markers'],
+    #     [markers, 'result']
+    # )
+
+    # img[markers==-1]=[0, 0, 0]
+    # PIS(img)
+
+
+    ## cv2.grabCut
+    # img = mt.cv_rgb_imread('img1.jpg')
+    # img = mt.image_resize(img, factor=0.3)
+    # OLD_IMG = img.copy()
+    # mask = np.zeros(img.shape[:2], np.uint8)
+    # SIZE = (1, 65)
+    # bgdModle = np.zeros(SIZE, np.float64)
+    # fgdModle = np.zeros(SIZE, np.float64)
+    # rect = (1, 1, img.shape[1], img.shape[0])
+    # cv2.grabCut(img, mask, rect, bgdModle, fgdModle, iterCount=1, mode=cv2.GC_INIT_WITH_RECT)
+    # img_1 = img * (mask == 3)[:,:,None]
+    # res_dict = dict()
+    # res_dict[1] = img_1
+    # loop_num = 1
+    # iter_each = 1
+    # for index in mt.tqdm(range(7)):
+    #     cv2.grabCut(img, mask, rect, bgdModle, fgdModle, iterCount=iter_each, mode=cv2.GC_INIT_WITH_MASK)
+    #     loop_num += iter_each
+    #     res_dict[loop_num] = (img * (mask == 3)[:,:,None])
+
+    # res_list = mt.get_list_from_list(list(res_dict), lambda x: [res_dict[x], 'loop_'+str(x)])
+    # res_list = [[OLD_IMG, 'raw image']] + res_list
+    # PIS(*res_list)
+
+
+    ## cv2.pyrMeanShiftFiltering
+    # img = mt.cv_rgb_imread('img1.jpg')
+    # img = mt.image_resize(img, factor=0.3)
+    # res_20_20 = cv2.pyrMeanShiftFiltering(img, sp=20, sr=20, maxLevel=3)
+    # res_20_50 = cv2.pyrMeanShiftFiltering(img, sp=20, sr=50, maxLevel=3)
+    # res_50_20 = cv2.pyrMeanShiftFiltering(img, sp=50, sr=20, maxLevel=3)
+    # res_50_50 = cv2.pyrMeanShiftFiltering(img, sp=50, sr=50, maxLevel=3)
+    # res_80_80 = cv2.pyrMeanShiftFiltering(img, sp=80, sr=80, maxLevel=3)
+    # PIS([img, 'raw img'], [res_20_20, 'sp: 20 sr:20'], [res_20_50, 'sp: 20 sr:50'], [res_50_20, 'sp: 50 sr:20'], [res_50_50, 'sp: 50 sr:50'], [res_80_80, 'sp: 80 sr:80'])
     pass
