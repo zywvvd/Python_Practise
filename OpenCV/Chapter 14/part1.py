@@ -158,6 +158,56 @@ from mtutils import *
 # print(cv2.isContourConvex(contours[0]))
 # print(cv2.isContourConvex(hull))
 # PIS(res1, res2)
+
+
+## 	cv.moments
+# def h2(mom):
+#     v20 = mom['nu20']
+#     v02 = mom['nu02']
+#     v11 = mom['nu11']
+#     h2 = (v20 + v02) ** 2 + 4 * (v11 ** 2)
+#     return h2
+
+# img = 255 - mt.cv_rgb_imread('conc.png', gray=True)
+# contours, hierarchy = cv2.findContours(img, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+# res = np.zeros_like(img)
+# cv2.drawContours(res, [contours[0]], -1, [200], -1)
+# another_res = mt.image_resize(np.rot90(res), factor=0.5)
+# mom_res = cv2.moments(res, True)
+# mom_another_res = cv2.moments(another_res, True)
+
+# h2_1 = h2(mom_res)
+# h2_2 = h2(mom_another_res)
+# PIS([res, str(h2_1)], [another_res, str(h2_2)])
+
+
+## cv2.HuMoments
+# img = 255 - mt.cv_rgb_imread('conc.png', gray=True)
+# contours, hierarchy = cv2.findContours(img, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+# res = np.zeros_like(img)
+# cv2.drawContours(res, [contours[0]], -1, [200], -1)
+# another_res = mt.image_resize(np.rot90(res), factor=0.5)
+# mom_res = cv2.moments(res, True)
+# mom_another_res = cv2.moments(another_res, True)
+
+# hu_res = cv2.HuMoments(mom_res)
+# hu_another_res = cv2.HuMoments(mom_another_res)
+
+
+# ## cv2.matchShapes
+# img = 255 - mt.cv_rgb_imread('conc.png', gray=True)
+# contours, hierarchy = cv2.findContours(img, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
+# res1 = np.zeros_like(img)
+# res2 = np.zeros_like(img)
+# cv2.drawContours(res1, [contours[0]], -1, [200], -1)
+# cv2.drawContours(res2, [contours[6]], -1, [200], -1)
+# another_res = mt.image_resize(np.rot90(res1), factor=0.5)
+# match_res1 = cv2.matchShapes(res1, another_res, cv2.CONTOURS_MATCH_I1, None)
+# match_res2 = cv2.matchShapes(res1, res2, cv2.CONTOURS_MATCH_I1, None)
+# PIS([res1, 'source img'], [another_res, f"match score {format(match_res1, '.3f')}"], [res2, f"match score {format(match_res2, '.3f')}"])
+
+
+# cv2.ShapeDistanceExtractor.computeDistance
 pass
 
 
